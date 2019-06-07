@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-cloak>
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<div ng-controller="ctrl">
+    <ol>
+       <li ng-repeat="grocery in groceries" ng-if="$index > 0">  
+        {{grocery.item}} these are your items
+       </li> 
+    </ol>
+    <label>
+        <input ng-model="groceries[1].item">
+    </label>
+    <div ng-include="list.html"></div>
+    <label>
+        <input type="checkbox" ng-model="showList">
+    </label>
+    <ng-include src="getList()"></ng-include>
+    
+</div>
+
+</body>
+<script src="groceries.js"></script>
+</html>
